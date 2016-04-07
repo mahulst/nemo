@@ -1,0 +1,5 @@
+#Build
+build/
+
+#Node module
+node_modules/
