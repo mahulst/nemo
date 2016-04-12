@@ -594,11 +594,14 @@ http://pugetworks.com/2011/04/css-media-queries-for-targeting-different-mobile-d
 //@media only screen and (max-device-width: 480px) {
 @media only screen and (max-width: 680px) {
   // General
-  .resp-l--fill {
+  .resp-l--fill,
+  table[class=resp-l--fill],
+  td[class=resp-l--fill] {
     width: 100% !important;
   }
 
-  .resp-l--20 {
+  .resp-l--20,
+  td[class=resp-l--20] {
     width: 20px !important;
   }
 
@@ -608,69 +611,82 @@ http://pugetworks.com/2011/04/css-media-queries-for-targeting-different-mobile-d
     padding-left: 24px !important;
   }
 
-  .hero__img {
+
+  .hero__img,
+  img[class=hero__img] {
     width: 100% !important;
     height: auto !important;
     display: block !important;
   }
 
 
-  .news {
+  .news,
+  table[class=news] {
     border-top: 20px solid $brand-grey !important;
   }
 
-  .news__item {
+  .news__item,
+  td[class=news__item] {
     width: 100% !important;
     border-left: 20px solid $brand-grey !important;
     border-right: 20px solid $brand-grey !important;
   }
 
-  .news__img {
+  .news__img,
+  img[class=news__img] {
     width: 100% !important;
     height: auto !important;
   }
 
 
-  .link-block__item {
+  .link-block__item,
+  td[class=link-block__item] {
     width: 100% !important;
     border-left: 20px solid $brand-green !important;
     border-right: 20px solid $brand-green !important;
   }
 
-  .link-block__img {
+  .link-block__img,
+  img[class=link-block__img] {
     width: 100% !important;
     height: auto !important;
   }
 
-  .shop {
+  .shop,
+  table[class=shop] {
     border-top: 20px solid $brand-grey !important;
   }
 
-  .shop__item {
+  .shop__item,
+  td[class=shop__item] {
     width: 100% !important;
     border-left: 20px solid $brand-grey !important;
     border-right: 20px solid $brand-grey !important;
   }
 
-  .shop__img {
+  .shop__img,
+  img[class=shop__img] {
     width: 100% !important;
     height: auto !important;
   }
 
-  .agenda__item {
+  .agenda__item,
+  td[class=agenda__item] {
     border-top: 20px solid $brand-white !important;
     border-left: 20px solid $brand-white !important;
     border-right: 20px solid $brand-white !important;
   }
 
-  .agenda__img {
+  .agenda__img,
+  img[class=agenda__img] {
     width: 100% !important;
     max-width: 160px !important;
     height: auto !important;
   }
 
 
-  .article__img {
+  .article__img,
+  img[class=article__img] {
     width: 100% !important;
     height: auto !important;
   }
@@ -690,42 +706,36 @@ http://pugetworks.com/2011/04/css-media-queries-for-targeting-different-mobile-d
 
 //@media only screen and (max-device-width: 480px) {
 @media only screen and (max-width: 480px) {
-  // General
-  table[class=resp-m--fill] {
-    width: 100% !important;
-  }
-
-  .resp-m--480 {
-    width: 480px !important;
-  }
-
   .logo,
-  .logo img {
+  .logo img,
+  img[class=logo] {
     width: 100px !important;
     height: 50px !important;
   }
 
-  .header__title {
+  .header__title,
+  span[class=header__title] {
     font-size: 16px !important;
   }
 
-  .intro__title {
+  .intro__title,
+  h1[class=intro__title] {
     font-size: 26px !important;
   }
 
-  .segment-heading {
+  .segment-heading,
+  table[class=segment-heading] {
     h3 {
       font-size: 26px !important;
       line-height: 40px !important;
     }
   }
 
-
-  .question {
+  .question,
+  table[class=question] {
     h2{
       font-size: 26px;
       line-height: 32px;
     }
   }
-
 }
