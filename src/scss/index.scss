@@ -1,3 +1,12 @@
+@media screen{
+  @font-face {
+    font-family: 'Campton';
+    font-style: normal;
+    font-weight: normal;
+    src: url(../fonts/30A232_0_0.woff2) format('woff2');
+  }
+}
+
 $brand-white: #fff;
 $brand-black: #000;
 $brand-grey: #e6e6e6;
@@ -8,7 +17,7 @@ $brand-blue: #0096fa;
 
 $text-black: #03050a;
 
-$font: Helvetica, Arial, sans-serif;
+$font: 'Campton', Helvetica, Arial, sans-serif;
 
 /* INLINE */
 
@@ -215,16 +224,23 @@ a {
 
 // News
 .news {
-
+  border-top: 20px solid $brand-grey;
 }
 
 .news--grey {
   background-color: $brand-grey;
 }
 
+.news--white {
+  background-color: $brand-white;
+}
+
 .news__item {
   background-color: $brand-white;
+  border-bottom: 20px solid $brand-grey;
+}
 
+.news__content {
   h3 {
     margin: 0;
     padding: 0 0 10px 0;
@@ -243,7 +259,7 @@ a {
 
 // News
 .link-block {
-
+  border-top: 20px solid $brand-green;
 }
 
 .link-block--grey {
@@ -256,26 +272,13 @@ a {
 
 .link-block__item {
   background-color: $brand-white;
-
-  h3 {
-    margin: 0;
-    padding: 0 0 10px 0;
-
-    font-weight: normal;
-  }
-
-  p {
-    margin: 0;
-    padding: 0;
-
-    font-size: 16px;
-    line-height: 22px;
-  }
+  border-bottom: 20px solid $brand-green;
 }
+
 
 // Shop
 .shop {
-
+  border-top: 20px solid $brand-grey !important;
 }
 
 .shop--grey {
@@ -288,7 +291,10 @@ a {
 
 .shop__item {
   background-color: $brand-white;
+  border-bottom: 20px solid $brand-grey;
+}
 
+.shop__content {
   h4 {
     margin: 0;
     padding: 0 0 10px 0;
@@ -360,6 +366,36 @@ a {
     font-size: 40px;
     line-height: 44px;
     font-weight: normal;
+  }
+}
+
+// Article
+.article {
+  h2 {
+    font-weight: normal;
+    font-size: 32px;
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+
+.article--white {
+  background-color: $brand-white;
+}
+
+.article--green {
+  background-color: $brand-green;
+}
+
+.article__item {
+  p{
+    margin-top: 0;
+
+    font-size: 16px;
+    line-height: 22px;
   }
 }
 
@@ -554,3 +590,142 @@ http://pugetworks.com/2011/04/css-media-queries-for-targeting-different-mobile-d
     /* Put CSS for high density (hdpi) Android layouts in here */
 }
 /* end Android targeting */
+
+//@media only screen and (max-device-width: 480px) {
+@media only screen and (max-width: 680px) {
+  // General
+  .resp-l--fill {
+    width: 100% !important;
+  }
+
+  .resp-l--20 {
+    width: 20px !important;
+  }
+
+  // Webversion
+  p[class=webversion] {
+    padding-right: 24px !important;
+    padding-left: 24px !important;
+  }
+
+  .hero__img {
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
+  }
+
+
+  .news {
+    border-top: 20px solid $brand-grey !important;
+  }
+
+  .news__item {
+    width: 100% !important;
+    border-left: 20px solid $brand-grey !important;
+    border-right: 20px solid $brand-grey !important;
+  }
+
+  .news__img {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+
+  .link-block__item {
+    width: 100% !important;
+    border-left: 20px solid $brand-green !important;
+    border-right: 20px solid $brand-green !important;
+  }
+
+  .link-block__img {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  .shop {
+    border-top: 20px solid $brand-grey !important;
+  }
+
+  .shop__item {
+    width: 100% !important;
+    border-left: 20px solid $brand-grey !important;
+    border-right: 20px solid $brand-grey !important;
+  }
+
+  .shop__img {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  .agenda__item {
+    border-top: 20px solid $brand-white !important;
+    border-left: 20px solid $brand-white !important;
+    border-right: 20px solid $brand-white !important;
+  }
+
+  .agenda__img {
+    width: 100% !important;
+    max-width: 160px !important;
+    height: auto !important;
+  }
+
+
+  .article__img {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  .article--white .article__item {
+    border-top: 20px solid $brand-white !important;
+    border-left: 20px solid $brand-white !important;
+    border-right: 20px solid $brand-white !important;
+  }
+
+  .article--green .article__item {
+    border-top: 20px solid $brand-green !important;
+    border-left: 20px solid $brand-green !important;
+    border-right: 20px solid $brand-green !important;
+  }
+}
+
+//@media only screen and (max-device-width: 480px) {
+@media only screen and (max-width: 480px) {
+  // General
+  table[class=resp-m--fill] {
+    width: 100% !important;
+  }
+
+  .resp-m--480 {
+    width: 480px !important;
+  }
+
+  .logo,
+  .logo img {
+    width: 100px !important;
+    height: 50px !important;
+  }
+
+  .header__title {
+    font-size: 16px !important;
+  }
+
+  .intro__title {
+    font-size: 26px !important;
+  }
+
+  .segment-heading {
+    h3 {
+      font-size: 26px !important;
+      line-height: 40px !important;
+    }
+  }
+
+
+  .question {
+    h2{
+      font-size: 26px;
+      line-height: 32px;
+    }
+  }
+
+}
