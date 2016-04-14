@@ -29,7 +29,7 @@ gulp.task('clean', function() {
 
 // Create Build
 gulp.task('build', function(callback) {
-  runSequence('clean', ['copy-assets'], 'zip-assets', 'inlineSource', 'inlineCss', 'stripComments', callback);
+  runSequence('clean', ['copy-assets'], 'sass', 'zip-assets', 'inlineSource', 'inlineCss', 'stripComments', callback);
 });
 
 // Default
