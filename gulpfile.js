@@ -95,7 +95,7 @@ gulp.task('inlineCss', function() {
     .pipe(inlineCss({
       applyStyleTags: true,
       applyLinkTags: true,
-      removeStyleTags: true,
+      removeStyleTags: false,
       removeLinkTags: true,
       preserveMediaQueries: true
     }))
