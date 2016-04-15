@@ -31,7 +31,7 @@ gulp.task('clean', function() {
 
 // Create Build
 gulp.task('build', function(callback) {
-  runSequence('clean', ['copy-assets'], 'sass', 'zip-assets', 'inlineSource', ['templateConsumer', 'templateBusiness'], 'inlineCss', 'stripComments', 'removeTemp', callback);
+  runSequence('clean', ['copy-assets'], 'sass', 'zip-assets', 'inlineSource', ['template:consumer:dutch', 'template:business:dutch', 'template:consumer:english'], 'inlineCss', 'stripComments', 'removeTemp', callback);
 });
 
 // Default
@@ -59,23 +59,33 @@ gulp.task('inlineSource', function() {
         .pipe(gulp.dest(config.tmp_dir));
 });
 
-// 2.1 Template Consumer
-gulp.task('templateConsumer', function() {
+// 2.1 Template Consumer Dutch
+gulp.task('template:consumer:dutch', function() {
   return gulp.src(config.tmp_dir + '/index.html')
     .pipe(preprocess({
-      context: { TEMPLATE: 'consumer'}
+      context: { TEMPLATE: 'consumer', LANGUAGE: 'dutch'}
     }))
     .pipe(rename('index-consumer.html'))
     .pipe(gulp.dest(config.build_dir));
 });
 
-// 2.2 Template Business
-gulp.task('templateBusiness', function() {
+// 2.2 Template Business Dutch
+gulp.task('template:business:dutch', function() {
   return gulp.src(config.tmp_dir + '/index.html')
     .pipe(preprocess({
-      context: { TEMPLATE: 'business'}
+      context: { TEMPLATE: 'business', LANGUAGE: 'dutch'}
     }))
     .pipe(rename('index-business.html'))
+    .pipe(gulp.dest(config.build_dir));
+});
+
+// 2.3 Template Consumer English
+gulp.task('template:consumer:english', function() {
+  return gulp.src(config.tmp_dir + '/index.html')
+    .pipe(preprocess({
+      context: { TEMPLATE: 'consumer', LANGUAGE: 'english'}
+    }))
+    .pipe(rename('index-consumer-english.html'))
     .pipe(gulp.dest(config.build_dir));
 });
 
