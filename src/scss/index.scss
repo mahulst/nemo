@@ -52,13 +52,20 @@ body {
   line-height: 100%;
 }
 
-#backgroundTable {
+.backgroundTable {
   margin:0 auto;
   padding: 0;
   width: 100% !important;
   line-height: 100% !important;
-  background-color: $brand-blue;
   table-layout: fixed;
+}
+
+.backgroundTable--blue {
+  background-color: $brand-blue;
+}
+
+.backgroundTable--grey {
+  background-color: $brand-grey;
 }
 
 

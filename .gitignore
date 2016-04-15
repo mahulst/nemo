@@ -1,5 +1,6 @@
 #Build
 build/
+src/css/
 
 #Node module
 node_modules/
