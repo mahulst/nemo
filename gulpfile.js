@@ -31,7 +31,7 @@ gulp.task('clean', function() {
 
 // Create Build
 gulp.task('build', function(callback) {
-  runSequence('clean', ['copy-assets'], 'sass', 'zip-assets', 'inlineSource', ['template:consumer:dutch', 'template:business:dutch', 'template:consumer:english'], 'inlineCss', 'stripComments', 'removeTemp', callback);
+  runSequence('clean', ['copy-assets'], 'sass', 'zip-assets', 'inlineSource', ['template:consumer:dutch', 'template:business:dutch', 'template:consumer:english', 'template:business:english'], 'inlineCss', 'stripComments', 'removeTemp', callback);
 });
 
 // Default
@@ -65,7 +65,7 @@ gulp.task('template:consumer:dutch', function() {
     .pipe(preprocess({
       context: { TEMPLATE: 'consumer', LANGUAGE: 'dutch'}
     }))
-    .pipe(rename('index-consumer.html'))
+    .pipe(rename('index-consumer-dutch.html'))
     .pipe(gulp.dest(config.build_dir));
 });
 
@@ -75,7 +75,7 @@ gulp.task('template:business:dutch', function() {
     .pipe(preprocess({
       context: { TEMPLATE: 'business', LANGUAGE: 'dutch'}
     }))
-    .pipe(rename('index-business.html'))
+    .pipe(rename('index-business-dutch.html'))
     .pipe(gulp.dest(config.build_dir));
 });
 
@@ -86,6 +86,16 @@ gulp.task('template:consumer:english', function() {
       context: { TEMPLATE: 'consumer', LANGUAGE: 'english'}
     }))
     .pipe(rename('index-consumer-english.html'))
+    .pipe(gulp.dest(config.build_dir));
+});
+
+// 2.3 Template Business English
+gulp.task('template:business:english', function() {
+  return gulp.src(config.tmp_dir + '/index.html')
+    .pipe(preprocess({
+      context: { TEMPLATE: 'business', LANGUAGE: 'english'}
+    }))
+    .pipe(rename('index-business-english.html'))
     .pipe(gulp.dest(config.build_dir));
 });
 
