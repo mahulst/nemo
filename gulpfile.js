@@ -5,18 +5,20 @@ var gulp = require('gulp'),
     browserSync = require('browser-sync').create(),
     runSequence = require('run-sequence'),
     del = require('del'),
+    rename = require("gulp-rename"),
     strip = require('gulp-strip-comments'),
     zip = require('gulp-zip'),
     inlineSource = require('gulp-inline-source'),
     inlineCss = require('gulp-inline-css'),
     sass = require('gulp-sass'),
-    sourcemaps = require('gulp-sourcemaps');
+    sourcemaps = require('gulp-sourcemaps'),
+    preprocess = require('gulp-preprocess');
 
 // Config variables
 var config = {
-  tmp_dir: './.tmp',
   build_dir: './build',
-  src_dir: './src'
+  tmp_dir:   './build/.tmp',
+  src_dir:   './src'
 };
 
 
@@ -29,7 +31,7 @@ gulp.task('clean', function() {
 
 // Create Build
 gulp.task('build', function(callback) {
-  runSequence('clean', ['copy-assets'], 'sass', 'zip-assets', 'inlineSource', 'inlineCss', 'stripComments', callback);
+  runSequence('clean', ['copy-assets'], 'sass', 'zip-assets', 'inlineSource', ['templateConsumer', 'templateBusiness'], 'inlineCss', 'stripComments', 'removeTemp', callback);
 });
 
 // Default
@@ -54,7 +56,27 @@ gulp.task('serve', ['sass'], function() {
 gulp.task('inlineSource', function() {
   return gulp.src(config.src_dir + '/*.html')
         .pipe(inlineSource())
-        .pipe(gulp.dest(config.build_dir));
+        .pipe(gulp.dest(config.tmp_dir));
+});
+
+// 2.1 Template Consumer
+gulp.task('templateConsumer', function() {
+  return gulp.src(config.tmp_dir + '/index.html')
+    .pipe(preprocess({
+      context: { TEMPLATE: 'consumer'}
+    }))
+    .pipe(rename('index-consumer.html'))
+    .pipe(gulp.dest(config.build_dir));
+});
+
+// 2.2 Template Business
+gulp.task('templateBusiness', function() {
+  return gulp.src(config.tmp_dir + '/index.html')
+    .pipe(preprocess({
+      context: { TEMPLATE: 'business'}
+    }))
+    .pipe(rename('index-business.html'))
+    .pipe(gulp.dest(config.build_dir));
 });
 
 // 2. Inline CSS
@@ -79,6 +101,12 @@ gulp.task('stripComments', function () {
     }))
     .pipe(gulp.dest(config.build_dir));
 });
+
+// 4. Remove .tmp folder
+gulp.task('removeTemp', function () {
+  return del([config.tmp_dir]);
+});
+
 
 // Copy image directory
 gulp.task('copy-assets', function() {
