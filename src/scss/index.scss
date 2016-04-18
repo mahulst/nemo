@@ -250,12 +250,24 @@ a {
 }
 
 // News
-.news {
+.news.news--grey {
   border-top: 20px solid $brand-grey;
+}
+
+.news.news--green {
+  border-top: 20px solid $brand-green;
 }
 
 .news--grey {
   background-color: $brand-grey;
+}
+
+.news--green {
+  background-color: $brand-green;
+}
+
+.news--green {
+  background-color: $brand-green;
 }
 
 .news--white {
@@ -266,8 +278,16 @@ a {
   background-color: $brand-white;
 }
 
-.news__item-row {
-  border-bottom: 20px solid $brand-grey;
+.news--grey {
+  .news__item-row {
+    border-bottom: 30px solid $brand-grey;
+  }
+}
+
+.news--green {
+  .news__item-row {
+    border-bottom: 30px solid $brand-green;
+  }
 }
 
 .news__content {
@@ -722,17 +742,34 @@ http://pugetworks.com/2011/04/css-media-queries-for-targeting-different-mobile-d
   }
 
 
-  .news,
-  table[class=news] {
+  .news--grey,
+  table[class=news--grey] {
     border-top: 20px solid $brand-grey !important;
   }
 
-  .news__item,
-  td[class=news__item] {
-    width: 100% !important;
-    border-left: 20px solid $brand-grey !important;
-    border-bottom: 20px solid $brand-grey !important;
-    border-right: 20px solid $brand-grey !important;
+  .news--green,
+  table[class=news--green] {
+    border-top: 20px solid $brand-green !important;
+  }
+
+  .news--grey {
+    .news__item,
+    td[class=news__item] {
+      width: 100% !important;
+      border-left: 20px solid $brand-grey !important;
+      border-bottom: 20px solid $brand-grey !important;
+      border-right: 20px solid $brand-grey !important;
+    }
+  }
+
+  .news--green {
+    .news__item,
+    td[class=news__item] {
+      width: 100% !important;
+      border-left: 20px solid $brand-green !important;
+      border-bottom: 20px solid $brand-green !important;
+      border-right: 20px solid $brand-green !important;
+    }
   }
 
   .news__img,
