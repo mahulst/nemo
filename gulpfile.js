@@ -31,7 +31,9 @@ gulp.task('clean', function() {
 
 // Create Build
 gulp.task('build', function(callback) {
-  runSequence('clean', ['copy-assets'], 'sass', 'zip-assets', 'inlineSource', ['template:consumer:dutch', 'template:business:dutch', 'template:consumer:english', 'template:business:english'], 'inlineCss', 'stripComments', 'removeTemp', callback);
+  runSequence('clean', ['copy-assets'], 'sass', 'zip-assets', 'inlineSource',
+    ['template:recreatief:dutch', 'template:recreatief:english', 'template:onderwijsPO:dutch', 'template:onderwijsVO:dutch', 'template:zaalverhuur:dutch', 'template:zaalverhuur:english', 'template:partners:dutch', 'template:partners:english'],
+    'inlineCss', 'stripComments', 'removeTemp', callback);
 });
 
 // Default
@@ -59,47 +61,87 @@ gulp.task('inlineSource', function() {
         .pipe(gulp.dest(config.tmp_dir));
 });
 
-// 2.1 Template Consumer Dutch
-gulp.task('template:consumer:dutch', function() {
+// 2.1 Template Recreatief Dutch
+gulp.task('template:recreatief:dutch', function() {
   return gulp.src(config.tmp_dir + '/index.html')
     .pipe(preprocess({
-      context: { TEMPLATE: 'consumer', LANGUAGE: 'dutch'}
+      context: { TEMPLATE: 'recreatief-dutch', LANGUAGE: 'dutch', COLOR: 'blue'}
     }))
-    .pipe(rename('index-consumer-dutch.html'))
+    .pipe(rename('recreatief-dutch.html'))
     .pipe(gulp.dest(config.build_dir));
 });
 
-// 2.2 Template Business Dutch
-gulp.task('template:business:dutch', function() {
+// 2.2 Template Recreatief English
+gulp.task('template:recreatief:english', function() {
   return gulp.src(config.tmp_dir + '/index.html')
     .pipe(preprocess({
-      context: { TEMPLATE: 'business', LANGUAGE: 'dutch'}
+      context: { TEMPLATE: 'recreatief-english', LANGUAGE: 'english', COLOR: 'blue'}
     }))
-    .pipe(rename('index-business-dutch.html'))
+    .pipe(rename('recreatief-english.html'))
     .pipe(gulp.dest(config.build_dir));
 });
 
-// 2.3 Template Consumer English
-gulp.task('template:consumer:english', function() {
+// 2.3 Template Onderwijs PO Dutch
+gulp.task('template:onderwijsPO:dutch', function() {
   return gulp.src(config.tmp_dir + '/index.html')
     .pipe(preprocess({
-      context: { TEMPLATE: 'consumer', LANGUAGE: 'english'}
+      context: { TEMPLATE: 'onderwijspo-dutch', LANGUAGE: 'dutch', COLOR: 'blue'}
     }))
-    .pipe(rename('index-consumer-english.html'))
+    .pipe(rename('onderwijspo-dutch.html'))
     .pipe(gulp.dest(config.build_dir));
 });
 
-// 2.3 Template Business English
-gulp.task('template:business:english', function() {
+// 2.4 Template Onderwijs VO Dutch
+gulp.task('template:onderwijsVO:dutch', function() {
   return gulp.src(config.tmp_dir + '/index.html')
     .pipe(preprocess({
-      context: { TEMPLATE: 'business', LANGUAGE: 'english'}
+      context: { TEMPLATE: 'onderwijsvo-dutch', LANGUAGE: 'dutch', COLOR: 'blue'}
     }))
-    .pipe(rename('index-business-english.html'))
+    .pipe(rename('onderwijsvo-dutch.html'))
     .pipe(gulp.dest(config.build_dir));
 });
 
-// 2. Inline CSS
+// 2.5 Template Zaalverhuur Dutch
+gulp.task('template:zaalverhuur:dutch', function() {
+  return gulp.src(config.tmp_dir + '/index.html')
+    .pipe(preprocess({
+      context: { TEMPLATE: 'zaalverhuur-dutch', LANGUAGE: 'dutch', COLOR: 'blue'}
+    }))
+    .pipe(rename('zaalverhuur-dutch.html'))
+    .pipe(gulp.dest(config.build_dir));
+});
+
+// 2.6 Template Zaalverhuur English
+gulp.task('template:zaalverhuur:english', function() {
+  return gulp.src(config.tmp_dir + '/index.html')
+    .pipe(preprocess({
+      context: { TEMPLATE: 'zaalverhuur-english', LANGUAGE: 'english', COLOR: 'blue'}
+    }))
+    .pipe(rename('zaalverhuur-english.html'))
+    .pipe(gulp.dest(config.build_dir));
+});
+
+// 2.7 Template Partners Dutch
+gulp.task('template:partners:dutch', function() {
+  return gulp.src(config.tmp_dir + '/index.html')
+    .pipe(preprocess({
+      context: { TEMPLATE: 'partners-dutch', LANGUAGE: 'dutch', COLOR: 'grey'}
+    }))
+    .pipe(rename('partners-dutch.html'))
+    .pipe(gulp.dest(config.build_dir));
+});
+
+// 2.8 Template Partners English
+gulp.task('template:partners:english', function() {
+  return gulp.src(config.tmp_dir + '/index.html')
+    .pipe(preprocess({
+      context: { TEMPLATE: 'partners-english', LANGUAGE: 'english', COLOR: 'grey'}
+    }))
+    .pipe(rename('partners-english.html'))
+    .pipe(gulp.dest(config.build_dir));
+});
+
+// 3. Inline CSS
 gulp.task('inlineCss', function() {
   return gulp.src(config.build_dir + '/*.html')
     .pipe(inlineCss({
@@ -112,7 +154,7 @@ gulp.task('inlineCss', function() {
     .pipe(gulp.dest(config.build_dir));
 });
 
-// 3. Strip HTML comments
+// 4. Strip HTML comments
 gulp.task('stripComments', function () {
   return gulp.src(config.build_dir + '/*.html')
     .pipe(strip({
@@ -122,7 +164,7 @@ gulp.task('stripComments', function () {
     .pipe(gulp.dest(config.build_dir));
 });
 
-// 4. Remove .tmp folder
+// 5. Remove .tmp folder
 gulp.task('removeTemp', function () {
   return del([config.tmp_dir]);
 });

@@ -51,10 +51,10 @@ Email on Acid - http://www.emailonacid.com/blog/details/C18/doctype_-_the_black_
 <body>
   <!-- Wrapper/Container Table: Use a wrapper table to control the width and the background color consistently of your email. Use this approach instead of setting attributes on the body tag. -->
 
-  <!-- @if TEMPLATE='consumer' -->
+  <!-- @if COLOR='blue' -->
   <table width="100%" cellpadding="0" cellspacing="0" border="0" class="backgroundTable backgroundTable--blue">
   <!-- @endif -->
-  <!-- @if TEMPLATE='business' -->
+  <!-- @if COLOR='grey' -->
   <table width="100%" cellpadding="0" cellspacing="0" border="0" class="backgroundTable backgroundTable--grey">
   <!-- @endif -->
 
@@ -88,11 +88,29 @@ Email on Acid - http://www.emailonacid.com/blog/details/C18/doctype_-_the_black_
           </td>
           <td valign="middle" height="60" align="right">
             <span class="header__title">
-              <!-- @if LANGUAGE='dutch' -->
-              <singleline label="Titel">NEMO nieuws</singleline>
+              <!-- @if TEMPLATE='recreatief-dutch' -->
+              <singleline label="Titel">Maak je wereld groter</singleline>
               <!-- @endif -->
-              <!-- @if LANGUAGE='english' -->
-              <singleline label="Titel">NEMO news</singleline>
+              <!-- @if TEMPLATE='recreatief-english' -->
+              <singleline label="Titel">Make your world bigger</singleline>
+              <!-- @endif -->
+              <!-- @if TEMPLATE='onderwijspo-dutch' -->
+              <singleline label="Titel">NEMO voor primair onderwijs</singleline>
+              <!-- @endif -->
+              <!-- @if TEMPLATE='onderwijsvo-dutch' -->
+              <singleline label="Titel">NEMO voor voortgezet onderwijs</singleline>
+              <!-- @endif -->
+              <!-- @if TEMPLATE='zaalverhuur-dutch' -->
+              <singleline label="Titel">Stop wat science in uw evenement</singleline>
+              <!-- @endif -->
+              <!-- @if TEMPLATE='zaalverhuur-english' -->
+              <singleline label="Titel">Let science inspire your event</singleline>
+              <!-- @endif -->
+              <!-- @if TEMPLATE='partners-dutch' -->
+              <singleline label="Titel">Nieuws voor relaties van NEMO</singleline>
+              <!-- @endif -->
+              <!-- @if TEMPLATE='partners-english' -->
+              <singleline label="Titel">News for relations of NEMO</singleline>
               <!-- @endif -->
             </span>
           </td>
@@ -791,165 +809,473 @@ Email on Acid - http://www.emailonacid.com/blog/details/C18/doctype_-_the_black_
         </table>
       </layout>
       <!-- End Question | green (repeat) -->
+      </repeater>
 
       <!-- Footer | Standaard | TESTED -->
-      <layout label="Footer standaard">
-        <table cellpadding="0" cellspacing="0" border="0" align="center" width="680" class="footer resp-l--fill">
-          <tr>
-            <td width="680" height="10" class='resp-l--fill'></td>
-          <tr>
-          <tr>
-            <td>
-              <table width="270" border="0" cellpadding="40" cellspacing="0" align="left" class="resp-l--fill">
-                <tr>
-                  <td valign="top">
-                    <!-- @if LANGUAGE='dutch' -->
-                    <span class="footer__header"><singleline label="Titel contact">Contact</singleline></span>
-                    <br><br>
-                    <singleline label="Telefoon">020 - 531 32 33</singleline>
-                    <br>
-                    <a href="mailto:info@e-nemo.nl" target="_blank">info@e-nemo.nl</a>
-                    <br>
-                    <a href="http://www.nemosciencemuseum.nl" target="_blank">www.nemosciencemuseum.nl</a>
-                    <!-- @endif -->
-                    <!-- @if LANGUAGE='english' -->
-                    <span class="footer__header"><singleline label="Titel contact">Contact</singleline></span>
-                    <br><br>
-                    <singleline label="Telefoon">+31-(0)20-531 31 50</singleline>
-                    <br>
-                    <a href="mailto:events@e-nemo.nl" target="_blank">events@e-nemo.nl</a>
-                    <!-- @endif -->
-                  </td>
-                </tr>
-              </table>
+      <!-- @if TEMPLATE='recreatief-dutch' -->
+      <table cellpadding="0" cellspacing="0" border="0" align="center" width="680" class="footer resp-l--fill">
+        <tr>
+          <td width="680" height="10" class='resp-l--fill'></td>
+        <tr>
+        <tr>
+          <td>
+            <table width="270" border="0" cellpadding="40" cellspacing="0" align="left" class="resp-l--fill">
+              <tr>
+                <td valign="top">
+                  <span class="footer__header"><singleline label="Titel contact">Contact</singleline></span>
+                  <br><br>
+                  <singleline label="Telefoon">020 - 531 32 33</singleline>
+                  <br>
+                  <a href="mailto:info@e-nemo.nl" target="_blank">info@e-nemo.nl</a>
+                  <br>
+                  <a href="http://www.nemosciencemuseum.nl" target="_blank">www.nemosciencemuseum.nl</a>
+                </td>
+              </tr>
+            </table>
 
-              <table width="210" border="0" cellpadding="40" cellspacing="0" align="left" class="resp-l--fill">
-                <tr>
-                  <td valign="top">
-                    <!-- @if LANGUAGE='dutch' -->
-                    <span class="footer__header"><singleline label="Titel social">Blijf op de hoogte</singleline></span>
-                    <!-- @endif -->
-                    <!-- @if LANGUAGE='english' -->
-                    <span class="footer__header"><singleline label="Titel social">Follow us</singleline></span>
-                    <!-- @endif -->
-                    <br><br>
-                    <a href="http://www.facebook.com/nemosciencemuseum" target="_blank">
-                      <img src="images/facebook.jpg" width="40" alt="facebook" class="image_fix">
-                    </a>
-                    <a href="http://www.twitter.com/nemosciencemuseum" target="_blank">
-                      <img src="images/twitter.jpg" width="40" alt="twitter" class="image_fix">
-                    </a>
-                    <a href="http://www.instagram.com/nemosciencemuseum" target="_blank">
-                      <img src="images/instagram.jpg" width="40" alt="instagram" class="image_fix">
-                    </a>
-                  </td>
-                </tr>
-              </table>
+            <table width="210" border="0" cellpadding="40" cellspacing="0" align="left" class="resp-l--fill">
+              <tr>
+                <td valign="top">
+                  <span class="footer__header"><singleline label="Titel social">Blijf op de hoogte</singleline></span>
+                  <br><br>
+                  <a href="http://www.facebook.com/nemosciencemuseum" target="_blank">
+                    <img src="images/facebook.jpg" width="40" alt="facebook" class="image_fix">
+                  </a>
+                  <a href="http://www.twitter.com/nemoamsterdam" target="_blank">
+                    <img src="images/twitter.jpg" width="40" alt="twitter" class="image_fix">
+                  </a>
+                  <a href="http://www.instagram.com/nemosciencemuseum" target="_blank">
+                    <img src="images/instagram.jpg" width="40" alt="instagram" class="image_fix">
+                  </a>
+                </td>
+              </tr>
+            </table>
 
-              <table width="195" border="0" cellpadding="40" cellspacing="0" align="left" class="resp-l--fill">
-                <tr>
-                  <td valign="top">
-                    <!-- @if LANGUAGE='dutch' -->
-                    <span class="footer__header"><singleline label="Titel sponsor">Hoofdpartner</singleline></span>
-                    <!-- @endif -->
-                    <!-- @if LANGUAGE='english' -->
-                    <span class="footer__header"><singleline label="Titel sponsor">Lead Partner</singleline></span>
-                    <!-- @endif -->
-                    <br><br>
-                    <a href="https://www.bankgiroloterij.nl/" target="_blank">
-                      <img src="images/logo-bankgiroloterij.png" alt="Bank giro loterij" class="image_fix" width="100%">
-                    </a>
-                  </td>
-                </tr>
-              </table>
-            </td>
-          </tr>
-          <tr>
-            <td width="680" height="10" class="resp-l--fill"></td>
-          <tr>
-        </table>
-      </layout>
+            <table width="195" border="0" cellpadding="40" cellspacing="0" align="left" class="resp-l--fill">
+              <tr>
+                <td valign="top">
+                  <span class="footer__header"><singleline label="Titel sponsor">Hoofdpartner</singleline></span>
+                  <br><br>
+                  <a href="https://www.bankgiroloterij.nl/" target="_blank">
+                    <img src="images/logo-bankgiroloterij.png" alt="Bank giro loterij" class="image_fix" width="100%">
+                  </a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td width="680" height="10" class="resp-l--fill"></td>
+        <tr>
+      </table>
+      <!-- @endif -->
+
+      <!-- @if TEMPLATE='recreatief-english' -->
+      <table cellpadding="0" cellspacing="0" border="0" align="center" width="680" class="footer resp-l--fill">
+        <tr>
+          <td width="680" height="10" class='resp-l--fill'></td>
+        <tr>
+        <tr>
+          <td>
+            <table width="270" border="0" cellpadding="40" cellspacing="0" align="left" class="resp-l--fill">
+              <tr>
+                <td valign="top">
+                  <span class="footer__header"><singleline label="Titel contact">Contact</singleline></span>
+                  <br><br>
+                  <singleline label="Telefoon">+31-(0)20-531 31 50</singleline>
+                  <br>
+                  <a href="mailto:info@e-nemo.nl" target="_blank">info@e-nemo.nl</a>
+                  <br>
+                  <a href="http://www.nemosciencemuseum.nl" target="_blank">www.nemosciencemuseum.nl</a>
+                </td>
+              </tr>
+            </table>
+
+            <table width="210" border="0" cellpadding="40" cellspacing="0" align="left" class="resp-l--fill">
+              <tr>
+                <td valign="top">
+                  <span class="footer__header"><singleline label="Titel social">Follow us</singleline></span>
+                  <br><br>
+                  <a href="http://www.facebook.com/nemosciencemuseum" target="_blank">
+                    <img src="images/facebook.jpg" width="40" alt="facebook" class="image_fix">
+                  </a>
+                  <a href="http://www.twitter.com/nemoamsterdam" target="_blank">
+                    <img src="images/twitter.jpg" width="40" alt="twitter" class="image_fix">
+                  </a>
+                  <a href="http://www.instagram.com/nemosciencemuseum" target="_blank">
+                    <img src="images/instagram.jpg" width="40" alt="instagram" class="image_fix">
+                  </a>
+                </td>
+              </tr>
+            </table>
+
+            <table width="195" border="0" cellpadding="40" cellspacing="0" align="left" class="resp-l--fill">
+              <tr>
+                <td valign="top">
+                  <span class="footer__header"><singleline label="Titel sponsor">Lead Partner</singleline></span>
+                  <br><br>
+                  <a href="https://www.bankgiroloterij.nl/" target="_blank">
+                    <img src="images/logo-bankgiroloterij.png" alt="Bank giro loterij" class="image_fix" width="100%">
+                  </a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td width="680" height="10" class="resp-l--fill"></td>
+        <tr>
+      </table>
+      <!-- @endif -->
+
+      <!-- @if TEMPLATE='onderwijspo-dutch' -->
+      <table cellpadding="0" cellspacing="0" border="0" align="center" width="680" class="footer resp-l--fill">
+        <tr>
+          <td width="680" height="10" class='resp-l--fill'></td>
+        <tr>
+        <tr>
+          <td>
+            <table width="270" border="0" cellpadding="40" cellspacing="0" align="left" class="resp-l--fill">
+              <tr>
+                <td valign="top">
+                  <span class="footer__header"><singleline label="Titel contact">Contact</singleline></span>
+                  <br><br>
+                  <singleline label="Telefoon">020 - 531 31 18</singleline>
+                  <br>
+                  <a href="mailto:reserveringen@e-nemo.nl" target="_blank">reserveringen@e-nemo.nl</a>
+                  <br>
+                  <a href="http://www.nemosciencemuseum.nl" target="_blank">www.nemosciencemuseum.nl</a>
+                </td>
+              </tr>
+            </table>
+
+            <table width="210" border="0" cellpadding="40" cellspacing="0" align="left" class="resp-l--fill">
+              <tr>
+                <td valign="top">
+                  <span class="footer__header"><singleline label="Titel social">Blijf op de hoogte</singleline></span>
+                  <br><br>
+                  <a href="http://www.facebook.com/nemosciencemuseum" target="_blank">
+                    <img src="images/facebook.jpg" width="40" alt="facebook" class="image_fix">
+                  </a>
+                  <a href="http://www.twitter.com/nemoamsterdam" target="_blank">
+                    <img src="images/twitter.jpg" width="40" alt="twitter" class="image_fix">
+                  </a>
+                  <a href="http://www.instagram.com/nemosciencemuseum" target="_blank">
+                    <img src="images/instagram.jpg" width="40" alt="instagram" class="image_fix">
+                  </a>
+                </td>
+              </tr>
+            </table>
+
+            <table width="195" border="0" cellpadding="40" cellspacing="0" align="left" class="resp-l--fill">
+              <tr>
+                <td valign="top">
+                  <span class="footer__header"><singleline label="Titel sponsor">Hoofdpartner</singleline></span>
+                  <br><br>
+                  <a href="https://www.bankgiroloterij.nl/" target="_blank">
+                    <img src="images/logo-bankgiroloterij.png" alt="Bank giro loterij" class="image_fix" width="100%">
+                  </a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td width="680" height="10" class="resp-l--fill"></td>
+        <tr>
+      </table>
+      <!-- @endif -->
+
+      <!-- @if TEMPLATE='onderwijsvo-dutch' -->
+      <table cellpadding="0" cellspacing="0" border="0" align="center" width="680" class="footer resp-l--fill">
+        <tr>
+          <td width="680" height="10" class='resp-l--fill'></td>
+        <tr>
+        <tr>
+          <td>
+            <table width="270" border="0" cellpadding="40" cellspacing="0" align="left" class="resp-l--fill">
+              <tr>
+                <td valign="top">
+                  <span class="footer__header"><singleline label="Titel contact">Contact</singleline></span>
+                  <br><br>
+                  <singleline label="Telefoon">020 - 531 31 18</singleline>
+                  <br>
+                  <a href="mailto:reserveringen@e-nemo.nl" target="_blank">reserveringen@e-nemo.nl</a>
+                  <br>
+                  <a href="http://www.nemosciencemuseum.nl" target="_blank">www.nemosciencemuseum.nl</a>
+                </td>
+              </tr>
+            </table>
+
+            <table width="210" border="0" cellpadding="40" cellspacing="0" align="left" class="resp-l--fill">
+              <tr>
+                <td valign="top">
+                  <span class="footer__header"><singleline label="Titel social">Blijf op de hoogte</singleline></span>
+                  <br><br>
+                  <a href="http://www.facebook.com/nemosciencemuseum" target="_blank">
+                    <img src="images/facebook.jpg" width="40" alt="facebook" class="image_fix">
+                  </a>
+                  <a href="http://www.twitter.com/nemoamsterdam" target="_blank">
+                    <img src="images/twitter.jpg" width="40" alt="twitter" class="image_fix">
+                  </a>
+                  <a href="http://www.instagram.com/nemosciencemuseum" target="_blank">
+                    <img src="images/instagram.jpg" width="40" alt="instagram" class="image_fix">
+                  </a>
+                </td>
+              </tr>
+            </table>
+
+            <table width="195" border="0" cellpadding="40" cellspacing="0" align="left" class="resp-l--fill">
+              <tr>
+                <td valign="top">
+                  <span class="footer__header"><singleline label="Titel sponsor">Hoofdpartner</singleline></span>
+                  <br><br>
+                  <a href="https://www.bankgiroloterij.nl/" target="_blank">
+                    <img src="images/logo-bankgiroloterij.png" alt="Bank giro loterij" class="image_fix" width="100%">
+                  </a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td width="680" height="10" class="resp-l--fill"></td>
+        <tr>
+      </table>
+      <!-- @endif -->
+
+      <!-- @if TEMPLATE='zaalverhuur-dutch' -->
+      <table cellpadding="0" cellspacing="0" border="0" align="center" width="680" class="footer resp-l--fill">
+        <tr>
+          <td width="680" height="10" class='resp-l--fill'></td>
+        <tr>
+        <tr>
+          <td>
+            <table width="270" border="0" cellpadding="40" cellspacing="0" align="left" class="resp-l--fill">
+              <tr>
+                <td valign="top">
+                  <span class="footer__header"><singleline label="Titel contact">Contact</singleline></span>
+                  <br><br>
+                  <singleline label="Telefoon">020 - 531 31 50</singleline>
+                  <br>
+                  <a href="mailto:evenementen@e-nemo.nl" target="_blank">evenementen@e-nemo.nl</a>
+                  <br>
+                  <a href="http://www.nemosciencemuseum.nl" target="_blank">www.nemosciencemuseum.nl</a>
+                </td>
+              </tr>
+            </table>
+
+            <table width="210" border="0" cellpadding="40" cellspacing="0" align="left" class="resp-l--fill">
+              <tr>
+                <td valign="top">
+                  <span class="footer__header"><singleline label="Titel social">Blijf op de hoogte</singleline></span>
+                  <br><br>
+                  <a href="http://www.facebook.com/nemosciencemuseum" target="_blank">
+                    <img src="images/facebook.jpg" width="40" alt="facebook" class="image_fix">
+                  </a>
+                  <a href="http://www.twitter.com/nemoamsterdam" target="_blank">
+                    <img src="images/twitter.jpg" width="40" alt="twitter" class="image_fix">
+                  </a>
+                  <a href="http://www.instagram.com/nemosciencemuseum" target="_blank">
+                    <img src="images/instagram.jpg" width="40" alt="instagram" class="image_fix">
+                  </a>
+                </td>
+              </tr>
+            </table>
+
+            <table width="195" border="0" cellpadding="40" cellspacing="0" align="left" class="resp-l--fill">
+              <tr>
+                <td valign="top">
+                  <span class="footer__header"><singleline label="Titel sponsor">Hoofdpartner</singleline></span>
+                  <br><br>
+                  <a href="https://www.bankgiroloterij.nl/" target="_blank">
+                    <img src="images/logo-bankgiroloterij.png" alt="Bank giro loterij" class="image_fix" width="100%">
+                  </a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td width="680" height="10" class="resp-l--fill"></td>
+        <tr>
+      </table>
+      <!-- @endif -->
+
+      <!-- @if TEMPLATE='zaalverhuur-english' -->
+      <table cellpadding="0" cellspacing="0" border="0" align="center" width="680" class="footer resp-l--fill">
+        <tr>
+          <td width="680" height="10" class='resp-l--fill'></td>
+        <tr>
+        <tr>
+          <td>
+            <table width="270" border="0" cellpadding="40" cellspacing="0" align="left" class="resp-l--fill">
+              <tr>
+                <td valign="top">
+                  <span class="footer__header"><singleline label="Titel contact">Contact</singleline></span>
+                  <br><br>
+                  <singleline label="Telefoon">+31-(0)20-531 31 50</singleline>
+                  <br>
+                  <a href="mailto:evenementen@e-nemo.nl" target="_blank">evenementen@e-nemo.nl</a>
+                  <br>
+                  <a href="http://www.nemosciencemuseum.nl" target="_blank">www.nemosciencemuseum.nl</a>
+                </td>
+              </tr>
+            </table>
+
+            <table width="210" border="0" cellpadding="40" cellspacing="0" align="left" class="resp-l--fill">
+              <tr>
+                <td valign="top">
+                  <span class="footer__header"><singleline label="Titel social">Follow us</singleline></span>
+                  <br><br>
+                  <a href="http://www.facebook.com/nemosciencemuseum" target="_blank">
+                    <img src="images/facebook.jpg" width="40" alt="facebook" class="image_fix">
+                  </a>
+                  <a href="http://www.twitter.com/nemoamsterdam" target="_blank">
+                    <img src="images/twitter.jpg" width="40" alt="twitter" class="image_fix">
+                  </a>
+                  <a href="http://www.instagram.com/nemosciencemuseum" target="_blank">
+                    <img src="images/instagram.jpg" width="40" alt="instagram" class="image_fix">
+                  </a>
+                </td>
+              </tr>
+            </table>
+
+            <table width="195" border="0" cellpadding="40" cellspacing="0" align="left" class="resp-l--fill">
+              <tr>
+                <td valign="top">
+                  <span class="footer__header"><singleline label="Titel sponsor">Lead Partner</singleline></span>
+                  <br><br>
+                  <a href="https://www.bankgiroloterij.nl/" target="_blank">
+                    <img src="images/logo-bankgiroloterij.png" alt="Bank giro loterij" class="image_fix" width="100%">
+                  </a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td width="680" height="10" class="resp-l--fill"></td>
+        <tr>
+      </table>
+      <!-- @endif -->
+
+      <!-- @if TEMPLATE='partners-dutch' -->
+      <table cellpadding="0" cellspacing="0" border="0" align="center" width="680" class="footer resp-l--fill">
+        <tr>
+          <td width="680" height="10" class='resp-l--fill'></td>
+        <tr>
+        <tr>
+          <td>
+            <table width="270" border="0" cellpadding="40" cellspacing="0" align="left" class="resp-l--fill">
+              <tr>
+                <td valign="top">
+                  <span class="footer__header"><singleline label="Titel contact">Contact</singleline></span>
+                  <br><br>
+                  <singleline label="Telefoon">020 - 531 32 26</singleline>
+                  <br>
+                  <a href="mailto:relaties@e-nemo.nl" target="_blank">relaties@e-nemo.nl</a>
+                  <br>
+                  <a href="http://www.nemosciencemuseum.nl" target="_blank">www.nemosciencemuseum.nl</a>
+                </td>
+              </tr>
+            </table>
+
+            <table width="210" border="0" cellpadding="40" cellspacing="0" align="left" class="resp-l--fill">
+              <tr>
+                <td valign="top">
+                  <span class="footer__header"><singleline label="Titel social">Blijf op de hoogte</singleline></span>
+                  <br><br>
+                  <a href="http://www.facebook.com/nemosciencemuseum" target="_blank">
+                    <img src="images/facebook.jpg" width="40" alt="facebook" class="image_fix">
+                  </a>
+                  <a href="http://www.twitter.com/nemoamsterdam" target="_blank">
+                    <img src="images/twitter.jpg" width="40" alt="twitter" class="image_fix">
+                  </a>
+                  <a href="http://www.instagram.com/nemosciencemuseum" target="_blank">
+                    <img src="images/instagram.jpg" width="40" alt="instagram" class="image_fix">
+                  </a>
+                </td>
+              </tr>
+            </table>
+
+            <table width="195" border="0" cellpadding="40" cellspacing="0" align="left" class="resp-l--fill">
+              <tr>
+                <td valign="top">
+                  <span class="footer__header"><singleline label="Titel sponsor">Hoofdpartner</singleline></span>
+                  <br><br>
+                  <a href="https://www.bankgiroloterij.nl/" target="_blank">
+                    <img src="images/logo-bankgiroloterij.png" alt="Bank giro loterij" class="image_fix" width="100%">
+                  </a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td width="680" height="10" class="resp-l--fill"></td>
+        <tr>
+      </table>
+      <!-- @endif -->
+
+      <!-- @if TEMPLATE='partners-english' -->
+      <table cellpadding="0" cellspacing="0" border="0" align="center" width="680" class="footer resp-l--fill">
+        <tr>
+          <td width="680" height="10" class='resp-l--fill'></td>
+        <tr>
+        <tr>
+          <td>
+            <table width="270" border="0" cellpadding="40" cellspacing="0" align="left" class="resp-l--fill">
+              <tr>
+                <td valign="top">
+                  <span class="footer__header"><singleline label="Titel contact">Contact</singleline></span>
+                  <br><br>
+                  <singleline label="Telefoon">+31-(0)20-531 32 26</singleline>
+                  <br>
+                  <a href="mailto:relaties@e-nemo.nl" target="_blank">relaties@e-nemo.nl</a>
+                  <br>
+                  <a href="http://www.nemosciencemuseum.nl" target="_blank">www.nemosciencemuseum.nl</a>
+                </td>
+              </tr>
+            </table>
+
+            <table width="210" border="0" cellpadding="40" cellspacing="0" align="left" class="resp-l--fill">
+              <tr>
+                <td valign="top">
+                  <span class="footer__header"><singleline label="Titel social">Follow us</singleline></span>
+                  <br><br>
+                  <a href="http://www.facebook.com/nemosciencemuseum" target="_blank">
+                    <img src="images/facebook.jpg" width="40" alt="facebook" class="image_fix">
+                  </a>
+                  <a href="http://www.twitter.com/nemoamsterdam" target="_blank">
+                    <img src="images/twitter.jpg" width="40" alt="twitter" class="image_fix">
+                  </a>
+                  <a href="http://www.instagram.com/nemosciencemuseum" target="_blank">
+                    <img src="images/instagram.jpg" width="40" alt="instagram" class="image_fix">
+                  </a>
+                </td>
+              </tr>
+            </table>
+
+            <table width="195" border="0" cellpadding="40" cellspacing="0" align="left" class="resp-l--fill">
+              <tr>
+                <td valign="top">
+                  <span class="footer__header"><singleline label="Titel sponsor">Lead Partner</singleline></span>
+                  <br><br>
+                  <a href="https://www.bankgiroloterij.nl/" target="_blank">
+                    <img src="images/logo-bankgiroloterij.png" alt="Bank giro loterij" class="image_fix" width="100%">
+                  </a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td width="680" height="10" class="resp-l--fill"></td>
+        <tr>
+      </table>
+      <!-- @endif -->
       <!-- END Footer Standaard -->
-
-      <!-- Footer | Scholen | TESTED -->
-      <layout label="Footer scholen">
-        <table cellpadding="0" cellspacing="0" border="0" align="center" width="680" class="footer resp-l--fill">
-          <tr>
-            <td width="680" height="10" class='resp-l--fill'></td>
-          <tr>
-          <tr>
-            <td>
-              <table width="270" border="0" cellpadding="40" cellspacing="0" align="left" class="resp-l--fill">
-                <tr>
-                  <td valign="top">
-                    <!-- @if LANGUAGE='dutch' -->
-                    <span class="footer__header"><singleline label="Titel contact">Contact</singleline></span>
-                    <br><br>
-                    <singleline label="Telefoon">020 - 531 31 18</singleline>
-                    <br>
-                    <a href="mailto:reserveringen@e-nemo.nl" target="_blank">reserveringen@e-nemo.nl</a>
-                    <br>
-                    <a href="http://www.nemosciencemuseum.nl" target="_blank">www.nemosciencemuseum.nl</a>
-                    <!-- @endif -->
-                    <!-- @if LANGUAGE='english' -->
-                    <span class="footer__header"><singleline label="Titel contact">Contact</singleline></span>
-                    <br><br>
-                    <singleline label="Telefoon">+31-(0)20-531 31 18</singleline>
-                    <br>
-                    <a href="mailto:events@e-nemo.nl" target="_blank">events@e-nemo.nl</a>
-                    <!-- @endif -->
-                  </td>
-                </tr>
-              </table>
-
-              <table width="210" border="0" cellpadding="40" cellspacing="0" align="left" class="resp-l--fill">
-                <tr>
-                  <td valign="top">
-                    <!-- @if LANGUAGE='dutch' -->
-                    <span class="footer__header"><singleline label="Titel social">Blijf op de hoogte</singleline></span>
-                    <!-- @endif -->
-                    <!-- @if LANGUAGE='english' -->
-                    <span class="footer__header"><singleline label="Titel social">Follow us</singleline></span>
-                    <!-- @endif -->
-                    <br><br>
-                    <a href="http://www.facebook.com/nemosciencemuseum" target="_blank">
-                      <img src="images/facebook.jpg" width="40" alt="facebook" class="image_fix">
-                    </a>
-                    <a href="http://www.twitter.com/nemosciencemuseum" target="_blank">
-                      <img src="images/twitter.jpg" width="40" alt="twitter" class="image_fix">
-                    </a>
-                    <a href="http://www.instagram.com/nemosciencemuseum" target="_blank">
-                      <img src="images/instagram.jpg" width="40" alt="instagram" class="image_fix">
-                    </a>
-                  </td>
-                </tr>
-              </table>
-
-              <table width="195" border="0" cellpadding="40" cellspacing="0" align="left" class="resp-l--fill">
-                <tr>
-                  <td valign="top">
-                    <!-- @if LANGUAGE='dutch' -->
-                    <span class="footer__header"><singleline label="Titel sponsor">Hoofdpartner</singleline></span>
-                    <!-- @endif -->
-                    <!-- @if LANGUAGE='english' -->
-                    <span class="footer__header"><singleline label="Titel sponsor">Lead Partner</singleline></span>
-                    <!-- @endif -->
-                    <br><br>
-                    <a href="https://www.bankgiroloterij.nl/" target="_blank">
-                      <img src="images/logo-bankgiroloterij.png" alt="Bank giro loterij" class="image_fix" width="100%">
-                    </a>
-                  </td>
-                </tr>
-              </table>
-            </td>
-          </tr>
-          <tr>
-            <td width="680" height="10" class="resp-l--fill"></td>
-          <tr>
-        </table>
-      </layout>
-      <!-- END Footer Standaard -->
-      </repeater>
 
       <!-- Webversion title | TESTED -->
       <table cellpadding="0" cellspacing="0" border="0" align="center" width="680" class="resp-l--fill">
