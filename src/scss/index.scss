@@ -16,8 +16,8 @@
   }
 }
 
-$brand-white: #fff;
-$brand-black: #000;
+$brand-white: #ffffff;
+$brand-black: #000000;
 $brand-grey: #e6e6e6;
 $brand-magenta: #f03ca5;
 $brand-pink: $brand-magenta;
@@ -85,6 +85,7 @@ body {
   width: 100% !important;
   line-height: 100% !important;
   table-layout: fixed;
+  min-width: 100%;
 }
 
 .backgroundTable--blue {
@@ -266,14 +267,6 @@ a:hover { color: green; }
 }
 
 // News
-.news.news--grey {
-  border-top: 20px solid $brand-grey;
-}
-
-.news.news--green {
-  border-top: 20px solid $brand-green;
-}
-
 .news--grey {
   background-color: $brand-grey;
 }
@@ -292,18 +285,6 @@ a:hover { color: green; }
 
 .news__item {
   background-color: $brand-white;
-}
-
-.news--grey {
-  .news__item-row {
-    border-bottom: 30px solid $brand-grey;
-  }
-}
-
-.news--green {
-  .news__item-row {
-    border-bottom: 30px solid $brand-green;
-  }
 }
 
 .news__content {
@@ -327,10 +308,6 @@ a:hover { color: green; }
 }
 
 // News
-.link-block {
-  border-top: 20px solid $brand-green;
-}
-
 .link-block--grey {
   background-color: $brand-grey;
 }
@@ -342,16 +319,8 @@ a:hover { color: green; }
 .link-block__item {  background-color: $brand-white;
 }
 
-.link-block__item-row {
-  border-bottom: 20px solid $brand-green;
-}
-
 
 // Shop
-.shop {
-  border-top: 20px solid $brand-grey !important;
-}
-
 .shop--grey {
   background-color: $brand-grey;
 }
@@ -362,10 +331,6 @@ a:hover { color: green; }
 
 .shop__item {
   background-color: $brand-white;
-}
-
-.shop__item-row {
-  border-bottom: 20px solid $brand-grey;
 }
 
 .shop__content {
@@ -403,7 +368,7 @@ a:hover { color: green; }
 }
 
 .price-discount {
-  color: #666;
+  color: #666666;
   font-family: $font-book;
 }
 
@@ -418,6 +383,7 @@ a:hover { color: green; }
     padding: 12px 0 0 0;
     font-weight: normal;
     font-size: 26px;
+    line-height: 32px;
     font-family: $font-book;
   }
 
@@ -447,7 +413,7 @@ a:hover { color: green; }
 }
 
 .agenda__age {
-  color: #666;
+  color: #666666;
   font-size: 12px;
   text-transform: uppercase;
   float: right;
@@ -626,12 +592,12 @@ a:hover { color: green; }
 
 // Footer
 .footer {
-  color: #666;
+  color: #666666;
   font-size: 14px;
   background-color: $brand-black;
 
   a {
-    color: #666;
+    color: #666666;
     font-family: $font-book;
 
     .image_fix {
@@ -651,6 +617,7 @@ a:hover { color: green; }
 }
 
 .footer__text {
+  color: #666666;
   font-size: 14px;
   font-family: $font-book;
 }
@@ -694,7 +661,6 @@ Read more: http://www.campaignmonitor.com/blog/post/3457/media-query-issues-in-y
   a[href^="tel"],
   a[href^="sms"] {
     text-decoration: none;
-    //color: black; /* or whatever your want */
     pointer-events: none;
     cursor: default;
   }
@@ -702,7 +668,6 @@ Read more: http://www.campaignmonitor.com/blog/post/3457/media-query-issues-in-y
   .mobile_link a[href^="tel"],
   .mobile_link a[href^="sms"] {
     text-decoration: default;
-    //color: orange !important; /* or whatever your want */
     pointer-events: auto;
     cursor: default;
   }
@@ -716,7 +681,6 @@ Read more: http://www.campaignmonitor.com/blog/post/3457/media-query-issues-in-y
   a[href^="tel"],
   a[href^="sms"] {
     text-decoration: none;
-    //color: blue; /* or whatever your want */
     pointer-events: none;
     cursor: default;
   }
@@ -724,7 +688,6 @@ Read more: http://www.campaignmonitor.com/blog/post/3457/media-query-issues-in-y
   .mobile_link a[href^="tel"],
   .mobile_link a[href^="sms"] {
     text-decoration: default;
-    //color: orange !important;
     pointer-events: auto;
     cursor: default;
   }
@@ -777,16 +740,6 @@ http://pugetworks.com/2011/04/css-media-queries-for-targeting-different-mobile-d
   }
 
 
-  .news--grey,
-  table[class=news--grey] {
-    border-top: 20px solid $brand-grey !important;
-  }
-
-  .news--green,
-  table[class=news--green] {
-    border-top: 20px solid $brand-green !important;
-  }
-
   .news--grey {
     .news__item,
     td[class=news__item] {
@@ -828,15 +781,6 @@ http://pugetworks.com/2011/04/css-media-queries-for-targeting-different-mobile-d
     height: auto !important;
   }
 
-  .shop,
-  table[class=shop] {
-    border-top: 20px solid $brand-grey !important;
-  }
-
-  .shop__item-row,
-  td[class=shop__item-row] {
-    border-bottom: 0;
-  }
 
   .shop__item,
   td[class=shop__item] {
