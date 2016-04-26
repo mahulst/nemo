@@ -365,7 +365,7 @@ a:hover { color: green; }
 }
 
 .shop__item-row {
-//  border-bottom: 20px solid $brand-grey;
+  border-bottom: 20px solid $brand-grey;
 }
 
 .shop__content {
@@ -393,7 +393,7 @@ a:hover { color: green; }
   }
 
   ul {
-    margin: 0;
+    margin: 0 0 0 20px;
     padding: 0;
 
     font-size: 16px;
@@ -694,7 +694,7 @@ Read more: http://www.campaignmonitor.com/blog/post/3457/media-query-issues-in-y
   a[href^="tel"],
   a[href^="sms"] {
     text-decoration: none;
-    color: black; /* or whatever your want */
+    //color: black; /* or whatever your want */
     pointer-events: none;
     cursor: default;
   }
@@ -716,7 +716,7 @@ Read more: http://www.campaignmonitor.com/blog/post/3457/media-query-issues-in-y
   a[href^="tel"],
   a[href^="sms"] {
     text-decoration: none;
-    color: blue; /* or whatever your want */
+    //color: blue; /* or whatever your want */
     pointer-events: none;
     cursor: default;
   }
@@ -833,12 +833,17 @@ http://pugetworks.com/2011/04/css-media-queries-for-targeting-different-mobile-d
     border-top: 20px solid $brand-grey !important;
   }
 
+  .shop__item-row,
+  td[class=shop__item-row] {
+    border-bottom: 0;
+  }
+
   .shop__item,
   td[class=shop__item] {
-    // width: 100% !important;
-    // border-left: 20px solid $brand-grey !important;
-    // border-bottom: 20px solid $brand-grey !important;
-    // border-right: 20px solid $brand-grey !important;
+    width: 100% !important;
+    border-left: 20px solid $brand-grey !important;
+    border-bottom: 20px solid $brand-grey !important;
+    border-right: 20px solid $brand-grey !important;
   }
 
   .shop__img,
