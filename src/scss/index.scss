@@ -53,8 +53,15 @@ body {
   margin: 0;
   padding: 0;
 
-  background: $brand-blue;
   font-family: $font-book;
+}
+
+.bg-blue {
+  background: $brand-blue;
+}
+
+.bg-grey {
+  background: $brand-grey;
 }
 
 /* Force Hotmail to display emails at full width */
@@ -169,9 +176,9 @@ a:link { color: orange; }
 a:visited { color: blue; }
 a:hover { color: green; }
 */
-a {
-  color: orange;
-}
+// a {
+//   color: orange;
+// }
 
 // Webversion
 .webversion {
@@ -193,6 +200,15 @@ a {
       cursor: pointer;
     }
   }
+}
+
+.break {
+  height: 0px;
+  line-height: 0px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
 }
 
 // Header
@@ -349,10 +365,13 @@ a {
 }
 
 .shop__item-row {
-  border-bottom: 20px solid $brand-grey;
+//  border-bottom: 20px solid $brand-grey;
 }
 
 .shop__content {
+
+  line-height: 26px;
+
   h4 {
     margin: 0;
     padding: 0 0 10px 0;
@@ -363,8 +382,18 @@ a {
     font-family: $font-medium;
   }
 
+  p,
+  multiline {
+    margin: 0;
+    padding: 0;
+
+    font-size: 16px;
+    line-height: 26px;
+    font-family: $font-book;
+  }
+
   ul {
-    margin: 0 0 0 20px;
+    margin: 0;
     padding: 0;
 
     font-size: 16px;
@@ -386,13 +415,14 @@ a {
 .agenda {
   h3 {
     margin: 0;
-    padding: 0;
+    padding: 12px 0 0 0;
     font-weight: normal;
     font-size: 26px;
     font-family: $font-book;
   }
 
-  p {
+  p,
+  multiline {
     margin: 0;
     padding: 0;
     font-size: 16px;
@@ -620,6 +650,11 @@ a {
   font-family: $font-medium;
 }
 
+.footer__text {
+  font-size: 14px;
+  font-family: $font-book;
+}
+
 /* NON-INLINE */
 
 /* Outlook 07, 10 Padding issue: These "newer" versions of Outlook add some padding around table cells potentially throwing off your perfectly pixeled table.  The issue can cause added space and also throw off borders completely.  Use this fix in your header or inline to safely fix your table woes.
@@ -667,7 +702,7 @@ Read more: http://www.campaignmonitor.com/blog/post/3457/media-query-issues-in-y
   .mobile_link a[href^="tel"],
   .mobile_link a[href^="sms"] {
     text-decoration: default;
-    color: orange !important; /* or whatever your want */
+    //color: orange !important; /* or whatever your want */
     pointer-events: auto;
     cursor: default;
   }
@@ -689,7 +724,7 @@ Read more: http://www.campaignmonitor.com/blog/post/3457/media-query-issues-in-y
   .mobile_link a[href^="tel"],
   .mobile_link a[href^="sms"] {
     text-decoration: default;
-    color: orange !important;
+    //color: orange !important;
     pointer-events: auto;
     cursor: default;
   }
@@ -800,10 +835,10 @@ http://pugetworks.com/2011/04/css-media-queries-for-targeting-different-mobile-d
 
   .shop__item,
   td[class=shop__item] {
-    width: 100% !important;
-    border-left: 20px solid $brand-grey !important;
-    border-bottom: 20px solid $brand-grey !important;
-    border-right: 20px solid $brand-grey !important;
+    // width: 100% !important;
+    // border-left: 20px solid $brand-grey !important;
+    // border-bottom: 20px solid $brand-grey !important;
+    // border-right: 20px solid $brand-grey !important;
   }
 
   .shop__img,

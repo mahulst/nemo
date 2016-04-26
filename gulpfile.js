@@ -6,6 +6,7 @@ var gulp = require('gulp'),
     runSequence = require('run-sequence'),
     del = require('del'),
     rename = require("gulp-rename"),
+    clipboard = require("gulp-clipboard"),
     strip = require('gulp-strip-comments'),
     zip = require('gulp-zip'),
     inlineSource = require('gulp-inline-source'),
@@ -34,6 +35,13 @@ gulp.task('build', function(callback) {
   runSequence('clean', ['copy-assets'], 'sass', 'zip-assets', 'inlineSource',
     ['template:recreatief:dutch', 'template:recreatief:english', 'template:onderwijsPO:dutch', 'template:onderwijsVO:dutch', 'template:zaalverhuur:dutch', 'template:zaalverhuur:english', 'template:partners:dutch', 'template:partners:english'],
     'inlineCss', 'stripComments', 'removeTemp', callback);
+});
+
+// Create build to clipboard
+gulp.task('build:copy', function(callback) {
+  runSequence('clean', ['copy-assets'], 'sass', 'zip-assets', 'inlineSource',
+    ['template:recreatief:dutch', 'template:recreatief:english', 'template:onderwijsPO:dutch', 'template:onderwijsVO:dutch', 'template:zaalverhuur:dutch', 'template:zaalverhuur:english', 'template:partners:dutch', 'template:partners:english'],
+    'inlineCss', 'stripComments', 'clipboard', 'removeTemp', callback);
 });
 
 // Default
@@ -191,4 +199,12 @@ gulp.task('sass', function () {
     .pipe(sourcemaps.write())
     .pipe(gulp.dest(config.src_dir + '/css'))
     .pipe(browserSync.stream());
+});
+
+
+// Copy to clipboard
+gulp.task('clipboard', function () {
+  return gulp.src(config.build_dir + "/recreatief-dutch.html")
+  .pipe(clipboard())
+  .pipe(gulp.dest(config.tmp_dir));
 });
